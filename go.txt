@@ -1,0 +1,26 @@
+--para iniciar el proyecto (creara un archivo go.mod)--
+
+go mod init poda-ab
+
+--para compilar y ejecutar--
+
+go run main.go
+
+--para generar ejecutable--
+
+go build .
+
+--para instalar dependencias (ejemplo)--
+
+go get github.com/fatih/color
+
+--el archivo go.mod contiene todas las dependencias del proyecto--
+--Puedes obtener las dependencias necesarias del proyecto usando el comando-- 
+
+go get 
+
+--o tambien--
+
+go mod download
+
+ Esto descargará todas las dependencias especificadas en tu archivo go.mod.

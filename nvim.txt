@@ -1,0 +1,63 @@
+Para realizar busquedas con rgrip y telescole:
+
+  Busqueda en especifico:
+    
+    :Telescope grep_string search=palabra_o_patron
+
+  Busqueda en vivo:
+    
+    :Telecope live_grep
+      
+  Ahora en atajo:
+
+    <Ctrl> + f
+
+Opciones de navegacion:
+  
+  Para alternar entre ventanas abiertas:
+    
+    <Ctrl> +w,w
+
+  Para alternar entre las ventanas de archivos:
+    
+    Tab
+
+Editado (en archivo init.lua):
+  
+  Para altenar entre nvim-tree y archivos abiertos:
+
+  <Ctrl> + n 
+
+Para abrir directamente el archivo init.lua:
+
+  :edit $MYVIMRC
+
+Para moverse al final de la linea:
+  
+  ff
+
+Para selecionar lineas:
+  
+  Seleccionar y cortar:
+    
+    shift+ v + d 
+
+  Seleccionar y copiar:
+    
+    shift + v + y
+
+  Para pegar:
+
+    p 
+
+Para deshacer cambios:
+  
+  <Ctrl> + r 
+
+Para guardar:
+  
+  <Ctrl> + s 
+
+Para salir:
+  
+  <Ctrl> + q

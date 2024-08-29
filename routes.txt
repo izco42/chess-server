@@ -1,0 +1,211 @@
+Rutas de usuario:
+
+    Para obtener todos los usuarios:
+
+        GET http://ip:3000/user/r-users
+
+        Recibiras un json de la forma:
+
+    [
+    {
+        "ID": 1,
+        "CreatedAt": "2024-08-21T10:42:09.9501852-06:00",
+        "UpdatedAt": "2024-08-21T10:42:09.9501852-06:00",
+        "DeletedAt": null,
+        "Username": "grilloChess",
+        "Email": "grilloChess@alumnos.udg.mx",
+        "Password": "$2a$10$WP5teVN8OE4kdRROkrM/Fe2OU5IzeG/H8yNakHYC4a30YT1przTS6"
+    },
+    {
+        "ID": 2,
+        "CreatedAt": "2024-08-21T10:42:55.9493662-06:00",
+        "UpdatedAt": "2024-08-21T10:42:55.9493662-06:00",
+        "DeletedAt": null,
+        "Username": "grilloChess2",
+        "Email": "grilloChess2@alumnos.udg.mx",
+        "Password": "$2a$10$Ux6y6cJSo4rdowVlkDAWkO3Q.9ecJLxVGOGDlNt4n8jjxDMAyZrGa"
+    },
+    ...,
+    ...,
+    ]
+    
+    Para crear un usuario (registro):
+
+        POST http://ip:3000/user/c-user
+
+        Enviar con un json de la forma:
+
+        {
+        "username": "grilloChess",
+        "password": "123456",
+        "email": "grilloChess@alumnos.udg.mx"
+        }
+
+        Recibiras un json de la forma:
+
+        {
+        "ID": 1,
+        "CreatedAt": "2024-08-21T10:42:09.9501852-06:00",
+        "UpdatedAt": "2024-08-21T10:42:09.9501852-06:00",
+        "DeletedAt": null,
+        "Username": "grilloChess",
+        "Email": "grilloChess@alumnos.udg.mx",
+        "Password": "$2a$10$WP5teVN8OE4kdRROkrM/Fe2OU5IzeG/H8yNakHYC4a30YT1przTS6"
+        }
+
+    Para leer un usuario (ingreso):
+
+        POST htto://ip:3000/user/r-user
+
+        Enviar con un json de la forma:
+
+        {
+        "email": "grilloChess@alumnos.udg.mx",
+        "password": "123456"
+        }
+
+        Recibiras un json de la forma:
+
+        {
+        "ID": 1,
+        "CreatedAt": "2024-08-21T10:42:09.9501852-06:00",
+        "UpdatedAt": "2024-08-21T10:42:09.9501852-06:00",
+        "DeletedAt": null,
+        "Username": "grilloChess",
+        "Email": "grilloChess@alumnos.udg.mx",
+        "Password": "$2a$10$WP5teVN8OE4kdRROkrM/Fe2OU5IzeG/H8yNakHYC4a30YT1przTS6"
+        }
+
+    Para eliminar un usuario por su id:
+
+        DELETE http://ip:3000/user/d-user
+    
+        Enviar con un json de la forma:
+
+        {
+            "id" : 1
+        }
+
+        Recibiras un:
+
+        "Usuario eliminado"
+    
+    STATUS CODE
+
+    200 OK (todo salio bien)
+    400 NOT OK (Hay errores en el json)
+    401 NOT OK (Usuario o contraseña incorrecto)
+    500 NOT OK (Error interno en la operacion)
+
+Rutas de partidas:
+    
+    Para obtener todas las partidas:
+
+        GET http://ip:3000/match/r-matchs
+
+        Recibiras un json de la forma:
+
+        [
+        {
+            "id": 1,
+            "createdAt": "2024-08-21T10:48:35.6260849-06:00",
+            "winnerId": 4,
+            "player2Id": 5,
+            "player3Id": 3,
+            "player4Id": 2,
+            "time": "00:03"
+        },
+        {
+            "id": 2,
+            "createdAt": "2024-08-21T10:50:26.0942752-06:00",
+            "winnerId": 5,
+            "player2Id": 4,
+            "player3Id": 2,
+            "player4Id": 3,
+            "time": "00:03"
+        },
+        ...,
+        ...,
+        ]
+    
+    Para crear una partida(registrar):
+
+        POST http://ip:3000/match/c-match
+
+        Enviar con un json de la forma:
+
+        {
+        "winnerId": 5,
+        "player2Id": 4,
+        "player3Id": 2,
+        "player4Id": 3,
+        "time": "00:03"
+        }
+
+        Recibiras un json de la forma:
+
+        {
+        "id": 1,
+        "createdAt": "2024-08-21T10:48:35.6260849-06:00",
+        "winnerId": 4,
+        "player2Id": 5,
+        "player3Id": 3,
+        "player4Id": 2,
+        "time": "00:03"
+        }
+    
+    Para obtener todas las partidas de un usuario:
+
+        POST http://ip:3000/match/r-match
+
+        Enviar con un json de la forma:
+
+        {
+            "id": 1
+        }
+
+        Recibiras un json de la forma:
+
+        [
+        {
+            "id": 1,
+            "created_at": "2024-08-21T10:48:35.6260849-06:00",
+            "winner_username": "grilloChess4",
+            "player2_username": "grilloChess",
+            "player3_username": "grilloChess3",
+            "player4_username": "grilloChess2",
+            "time": "00:03"
+        },
+        {
+            "id": 2,
+            "created_at": "2024-08-21T10:50:26.0942752-06:00",
+            "winner_username": "grilloChess",
+            "player2_username": "grilloChess4",
+            "player3_username": "grilloChess2",
+            "player4_username": "grilloChess3",
+            "time": "00:03"
+        },
+        ...,
+        ...
+        ]
+
+    Para eliminar una partida por su id:
+
+        DELETE http://ip:3000/match/d-match
+    
+        Enviar json de la forma:
+
+        {
+            "id":1
+        }
+
+        Recibiras un:
+
+        "Partido eliminado"
+
+    STATUS CODE
+
+    200 OK (todo salio bien)
+    400 NOT OK (Hay errores en el json)
+    500 NOT OK (Error interno en la operacion)
+    
