@@ -1,6 +1,6 @@
 package routes
 import (
-	"chess4/controllers"
+	"chess-server/controllers"
 	"github.com/gofiber/fiber/v2"
 )
 func UserRoutes(app *fiber.App) {

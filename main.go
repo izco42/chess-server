@@ -1,8 +1,9 @@
-  package main
+package main
 
 import (
-	"chess4/database"
-	"chess4/routes"
+	"chess-server/database"
+	"chess-server/routes"
+	"chess-server/treebasedmodel"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 )
@@ -20,7 +21,8 @@ func main() {
 	routes.UserRoutes(app)
 	routes.MatchRoutes(app)
 
+	treebasedmodel.TreeBasedModel()
 	app.Listen(":3000")
 
-
+   
 }

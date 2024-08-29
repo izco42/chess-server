@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"chess4/models"
-	"chess4/services"
+	"chess-server/models"
+	"chess-server/services"
 	"log"
 	"github.com/gofiber/fiber/v2"
 )

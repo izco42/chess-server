@@ -1,8 +1,8 @@
 package services
 
 import (
-	"chess4/database"
-	"chess4/models"
+	"chess-server/database"
+	"chess-server/models"
 	"errors"
 	"golang.org/x/crypto/bcrypt"
 	"log"

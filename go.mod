@@ -1,4 +1,4 @@
-module chess4
+module chess-server
 
 go 1.21.6
 
@@ -8,8 +8,6 @@ require (
 	gorm.io/driver/sqlite v1.5.6
 	gorm.io/gorm v1.25.11
 )
-
-replace ../poda-ab =>  ../poda-ab
 
 require (
 	github.com/andybalholm/brotli v1.0.5 // indirect

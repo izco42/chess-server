@@ -1,7 +1,7 @@
 package database
 
 import (
-	"chess4/models"
+	"chess-server/models"
 	"log"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
