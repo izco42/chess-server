@@ -239,4 +239,22 @@ Rutas de mejor jugada:
 
     }
 
+    recibiras un json de la forma:
+   {
+     "From": [
+      12,
+      3
+    ],
+    "To": [
+      11,
+      3
+    ],
+    "Piece": "BP"
+   }
 
+ 
+   STATUS CODE
+
+    200 OK (todo salio bien)
+    400 NOT OK (Hay errores en el json)
+    500 NOT OK (Error interno en la operacion)

@@ -62,7 +62,6 @@ func GetMovesPawn(position [2]int, board [][]string, color string) [][2]int {
 		if board[position[0]-1][position[1]] == "-" {
 			moves = append(moves, [2]int{position[0] - 1, position[1]})
 		}
-
 		//diagonal derecha
 		if string(board[position[0]-1][position[1]+1][0]) != "B" && board[position[0]-1][position[1]+1] != "-" {
 			moves = append(moves, [2]int{position[0] - 1, position[1] + 1})
@@ -428,7 +427,6 @@ func GetMovesKing(position [2]int, board [][]string, color string) [][2]int {
 	return clearInvalidMoves(moves)
 }
 
-
 // GeneratePossibleMoves genera todos los movimientos posibles para el jugador actual
 func GeneratePossibleMoves(board [][]string, player string) []Move {
 	var moves []Move
@@ -439,7 +437,7 @@ func GeneratePossibleMoves(board [][]string, player string) []Move {
 			piece := board[row][col]
 
 			// Verificamos si la pieza pertenece al jugador actual
-            if len(piece) > 0 && IsPlayerPiece(piece, player) && piece != "-" {
+			if len(piece) > 0 && IsPlayerPiece(piece, player) && piece != "-" {
 				// Obtenemos los movimientos válidos para la pieza actual
 				pieceMoves := GetValidMovesForPiece(board, piece, [2]int{row, col}, player)
 
@@ -457,6 +455,7 @@ func GeneratePossibleMoves(board [][]string, player string) []Move {
 
 	return moves
 }
+
 /*esta funcion retornara todos los posibles movimientos para las piezas que no sean el jugador que se indica*/
 func GeneratePossibleMovesForOpponent(board [][]string, player string) []Move {
 	var moves []Move
@@ -466,7 +465,7 @@ func GeneratePossibleMovesForOpponent(board [][]string, player string) []Move {
 			piece := board[row][col]
 
 			// Verificamos si la pieza pertenece al jugador actual
-            if len(piece) > 0 && !IsPlayerPiece(piece, player) && piece != "-" {
+			if len(piece) > 0 && !IsPlayerPiece(piece, player) && piece != "-" {
 
 				pieceMoves := GetValidMovesForPiece(board, piece, [2]int{row, col}, string(piece[0]))
 
@@ -485,9 +484,8 @@ func GeneratePossibleMovesForOpponent(board [][]string, player string) []Move {
 	return moves
 }
 
-
 func IsPlayerPiece(piece string, player string) bool {
-    return len(piece) > 0 && len(player) > 0 && piece[0] == player[0]
+	return len(piece) > 0 && len(player) > 0 && piece[0] == player[0]
 }
 
 // Función que retorna los movimientos válidos de una pieza en base a su tipo
@@ -532,4 +530,3 @@ func ApplyMove(board [][]string, move Move) [][]string {
 
 	return newBoard
 }
-
