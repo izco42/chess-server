@@ -456,7 +456,8 @@ func GeneratePossibleMoves(board [][]string, player string) []Move {
 	return moves
 }
 
-/*esta funcion retornara todos los posibles movimientos para las piezas que no sean el jugador que se indica*/
+/*esta funcion retornara todos los posibles movimientos para las 
+piezas que no sean el jugador que se indica y que ademas no sean piezas grises*/      
 func GeneratePossibleMovesForOpponent(board [][]string, player string) []Move {
 	var moves []Move
 	// Recorremos el tablero
@@ -464,9 +465,9 @@ func GeneratePossibleMovesForOpponent(board [][]string, player string) []Move {
 		for col := 0; col < len(board[row]); col++ {
 			piece := board[row][col]
 
-			// Verificamos si la pieza pertenece al jugador actual
-			if len(piece) > 0 && !IsPlayerPiece(piece, player) && piece != "-" {
-
+			// Verificamos si la pieza pertenece al jugador actual y que no sea una pieza de un jugador que perdio 
+			if len(piece) > 0 && !IsPlayerPiece(piece, player) && piece != "-" && !IsPieceLoose(piece){
+ 
 				pieceMoves := GetValidMovesForPiece(board, piece, [2]int{row, col}, string(piece[0]))
 
 				// Agregamos los movimientos a la lista
@@ -486,6 +487,10 @@ func GeneratePossibleMovesForOpponent(board [][]string, player string) []Move {
 
 func IsPlayerPiece(piece string, player string) bool {
 	return len(piece) > 0 && len(player) > 0 && piece[0] == player[0]
+}
+
+func IsPieceLoose(piece string) bool {
+  return len(piece) > 0 && piece[0] == 'L' 
 }
 
 // Función que retorna los movimientos válidos de una pieza en base a su tipo

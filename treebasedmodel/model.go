@@ -16,7 +16,8 @@ los colores de los jugadores son:
 		G: green
 		Y: yellow
 		R: red
-
+    L: loose (jugadores que perdieron)
+ 
 La primer letra de una pieza aliada indica su color y la segunda su tipo
 
 		BP: peon azul
