@@ -72,7 +72,7 @@ func GetMovesPawn(position [2]int, board [][]string, color string) [][2]int {
 		}
 	}
 
-	if color == "Y" {
+	if color == "R" {
 		if board[position[0]+1][position[1]] == "-" {
 			moves = append(moves, [2]int{position[0] + 1, position[1]})
 		}
@@ -86,7 +86,7 @@ func GetMovesPawn(position [2]int, board [][]string, color string) [][2]int {
 		}
 	}
 
-	if color == "R" {
+	if color == "Y" {
 		//movimiento hacia adelante (esta pieza su adelante es a la misma altura pero moverse a la izquierda)
 		if board[position[0]][position[1]-1] == "-" {
 			moves = append(moves, [2]int{position[0], position[1] - 1})
